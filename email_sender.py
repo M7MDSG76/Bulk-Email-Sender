@@ -8,7 +8,7 @@ import sys, pandas as pd, os
 from pathlib import Path
 
 
-def start_session(sender_address, sender_pass):
+def start_smtp_gmail_session(sender_address, sender_pass):
    # Create SMTP session for sending the email
         session = smtplib.SMTP('smtp.gmail.com', 587)  # use gmail with port
         session.starttls()  # enable security
@@ -81,13 +81,13 @@ def from_excel_to_list(xlsx_path, sheet_name,
 
 def main():
         # Sender address
-        sender_address = 'example@gmail.com' 
+        sender_address = 'mohammed.s.g76@gmail.com' 
         
         # Use google app pasword to login insted of using the orginal passowrd. 
-        sender_pass = '' 
+        sender_pass = 'cmyvblrcqncrorux' 
         
         # excel file address path.
-        Addresses_source = 'emails0005.xlsx'
+        Addresses_source = 'sourceFile.xlsx'
         
         # Recruiters addresses list
         recruiters_list = from_excel_to_list(Addresses_source, 'Emails', 'Email')
@@ -117,6 +117,35 @@ Mohammed Saleh AlGhanmi
 Jeddah | +966-500977323 | Linkedin: https://www.linkedin.com/in/mohammed-s-alghanmi/ | GitHub: https://github.com/M7MDSG76
         '''
         
+        
+        """
+    //// My Email attachments 
+         # Email Subject
+        email_subject = 'Computer Science Graduate Seeking for a Job'
+        
+        # Email letter
+        email_message = '''
+Dear Hiring Manager, 
+
+
+I am Mohammed Saleh Alghanmi, and I am excited to apply for a job at your company.
+I am a recent graduate (April 2021) in Computer Science in Software Engineering track from King Abdul-Aziz University,
+and I am eager to enter the workforce. 
+
+My cover letter and resume are attached for your review.
+If you would like more information regarding my qualifications for the job, please do not hesitate to reach out. 
+
+Thank you so much for your time and consideration, and I looking forward to hearing from you soon.
+
+Sincerely,
+
+
+Mohammed Saleh AlGhanmi
+
+Jeddah | +966-500977323 | Linkedin: https://www.linkedin.com/in/mohammed-s-alghanmi/ | GitHub: https://github.com/M7MDSG76
+        '''
+        """
+        
         # The CV file name without the path (it should be in the same as the project file path)
         CV_file_name = 'Mohammed_Saleh_Alghanmi_CV.pdf'
         
@@ -125,7 +154,7 @@ Jeddah | +966-500977323 | Linkedin: https://www.linkedin.com/in/mohammed-s-algha
         
         
         # Start smtp session.
-        session = start_session(sender_address, sender_pass)
+        session = start_smtp_gmail_session(sender_address, sender_pass)
         
         # Iterate over the recruiters and send email for each.
         for recruiter in range(len(recruiters_list)):
