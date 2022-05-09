@@ -1,3 +1,7 @@
 *.docx
 *.pdf
 *.xlsx
+/dist
+/build
+/__pycache__
+/SendingFrame.spec
