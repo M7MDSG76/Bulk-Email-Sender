@@ -1,6 +1,6 @@
 """
 This Project started on: 4/19/2022  10:00 PM
-I start this project after a request from a client and as I have already made the SMTP email sender program I decided to accept his request.
+I start this project after a request from a client and as I have already made the SMTP email sender program.
 
 in this project I will:
 - create GUI for the program.
